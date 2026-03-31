@@ -1,8 +1,9 @@
 # GlowQ: Group-Shared LOw-Rank Approximation for Quantized LLMs
+[![arXiv](https://img.shields.io/badge/arXiv-2603.25385-b31b1b.svg)](https://arxiv.org/abs/2603.25385) [![GitHub](https://img.shields.io/badge/GitHub-GLOWQ-181717.svg?logo=github)](https://github.com/ahnselim/GLOWQ)
 
 ![GlowQ overview](figures/GlowQ_overview.png)
 
-[![arXiv](https://img.shields.io/badge/arXiv-2603.25385-b31b1b.svg)](https://arxiv.org/abs/2603.25385) [![GitHub](https://img.shields.io/badge/GitHub-GLOWQ-181717.svg?logo=github)](https://github.com/ahnselim/GLOWQ)
+
 
 GlowQ is a low-rank correction method for quantized LLMs that reduces the latency and memory overhead of conventional per-layer restoration by sharing and caching a single right-factor projection across modules that consume the same input (e.g., QKV or MLP groups).
 
