@@ -19,8 +19,6 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from datasets import load_dataset
 
 
-
-
 try:
     from lm_eval import evaluator
     from lm_eval.models.huggingface import HFLM
@@ -36,8 +34,6 @@ try:
     _HAS_NUMPY = True
 except Exception:
     _HAS_NUMPY = False
-
-
 
 
 _argv_disable = any(arg == "--use_cuda_w4a16" for arg in sys.argv)
@@ -359,15 +355,9 @@ if HAS_TRITON:
         return model
 
 
-
-
-
-
-
 def _cuda_sync(device):
     if isinstance(device, torch.device) and device.type == "cuda":
         torch.cuda.synchronize(device)
-
 
 @contextmanager
 def temp_generation_overrides(model, **overrides):
@@ -395,11 +385,6 @@ def _get_sequences_from_generate(output):
     return output.sequences if hasattr(output, "sequences") else output
 
 
-
-
-
-
-
 def get_parent_module(model, name):
     parts = name.split(".")
     parent = model
@@ -408,15 +393,9 @@ def get_parent_module(model, name):
     return parent, parts[-1]
 
 
-
-
-
 def clear_group_cache():
     
     pass
-
-
-
 
 
 class MiniGroupCache:
@@ -447,9 +426,6 @@ class MiniGroupCache:
         self.r = None
         self.valid = False
         self.uses_left = 0
-
-
-
 
 
 class AddSVDCorrection(nn.Module):
@@ -1224,23 +1200,7 @@ def main():
                 print(f"⚠️ Failed to save Harness results: {exc}")
 
         set_svd_alpha(1.0)
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+      
 
 
 if __name__ == "__main__":
